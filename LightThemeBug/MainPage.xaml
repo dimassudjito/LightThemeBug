@@ -17,7 +17,7 @@
                 BackgroundColor="{DynamicResource BackgroundColor}"/>
 
             <Label
-                Text="Hello, World!"
+                Text="Click button to change theme"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" 
@@ -28,7 +28,8 @@
                 Text="Click me"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" 
-                BackgroundColor="{DynamicResource BackgroundColor}"/>
+                BackgroundColor="{DynamicResource BackgroundColor}"
+                TextColor="{DynamicResource ForegroundTextColor}"/>
 
             <Entry Grid.Column="17"
                BackgroundColor="{DynamicResource BackgroundColor}"/>
