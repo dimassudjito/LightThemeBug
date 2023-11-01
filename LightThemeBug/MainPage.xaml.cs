@@ -4,7 +4,7 @@ namespace LightThemeBug
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        string theme = "Dark";
 
         public MainPage()
         {
@@ -13,16 +13,19 @@ namespace LightThemeBug
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
             SemanticScreenReader.Announce(CounterBtn.Text);
 
-            new LightThemeSettings().ApplyDynamicTheme();
+            if (theme == "Dark")
+            {
+                new LightThemeSettings().ApplyDynamicTheme();
+                theme = "Light";
+            } else
+            {
+                new DarkThemeSettings().ApplyDynamicTheme();
+                theme = "Dark";
+            }
+            CounterBtn.Text = $"Using {theme} theme";
+
         }
     }
 }
